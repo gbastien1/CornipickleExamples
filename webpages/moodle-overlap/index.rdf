@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:MAF="http://maf.mozdev.org/metadata/rdf#"
+         xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description RDF:about="urn:root">
+    <MAF:originalurl RDF:resource="http://moodle2.uqac.ca/"/>
+    <MAF:title RDF:resource="Moodle | UQAC"/>
+    <MAF:archivetime RDF:resource="Sat, 03 May 2014 11:50:46 -0400"/>
+    <MAF:indexfilename RDF:resource="index.html"/>
+    <MAF:charset RDF:resource="UTF-8"/>
+  </RDF:Description>
+</RDF:RDF>

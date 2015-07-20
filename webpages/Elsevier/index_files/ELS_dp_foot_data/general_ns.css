@@ -1,0 +1,163 @@
+.abouttabs {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#000000;}
+.abouttabs a {font-family:verdana,,arial,helvetica,san-serif;font-size:11px;;color:#ffffff;text-decoration:none;}
+
+.actioned {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#000033;font-weight:bold;}
+
+.agabh {font-family:arial,helvetica,verdana,san-serif;font-size:13px;font-weight:bold;color:#FF6600;}
+.agabhstar {font-family:times,verdana,arial,helvetica,san-serif;font-size:16px;font-weight:bold;color:#FF6600;line-height:11px;}
+.abh {font-family:verdana,arial,helvetica,san-serif;font-size:13px;font-weight:bold;color:#FF0000;}
+
+.agheadpage {font:10px verdana,arial,helvetica,verdana,san-serif;font-weight:bold;color:#FF6600;}
+.agheadpage a {font:10px verdana,arial,helvetica,verdana,san-serif;font-weight:bold;color:#000000;text-decoration:none;}
+.agheadpageoff {font-family:verdana,arial,helvetica,san-serif;font-size:10px;font-weight:800;color:#000000;}
+.agheadpageoff a {font-family:verdana,arial,helvetica,san-serif;font-size:10px;font-weight:800;color:#000000;text-decoration:none;}
+
+.agheader1 {font-family:arial,helvetica,verdana,san-serif;font-size:16px;color:#000000;font-weight:bold;}
+.agheader2 {font-family:arial,helvetica,verdana,san-serif;font-size:15px;color:#000000;font-weight:bold;word-spacing:-1;}
+
+.agloginbox {font:10px arial,verdana,helvetica,san-serif;color:#000000;}
+.agloginbox a {font:10px arial,verdana,helvetica,san-serif;color:#000000;text-decoration:underline;}
+
+.agpickeron {font-family:arial,helvetica,verdana,san-serif;font-size:12px;font-weight:bold;color:#000000;}
+
+.agpubinfo {font-family:arial,verdana,helvetica,san-serif;font-size:12px;color:#00000;font-weight:bold;}
+
+.agpubbox {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#ff6600;font-weight:bold;}
+.agpubbox a  {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#000000;text-decoration:underline;font-weight:normal;}
+
+.agpubboxwhite  {font:10px verdana,arial,helvetica,san-serif;color:#ffffff;font-weight:bold;}
+.agpubboxwhite a {font:10px verdana,arial,helvetica,san-serif;color:#ffffff;font-weight:bold;text-decoration:underline;}
+
+.artworkh1 {font-family:verdana,arial,helvetica,san-serif;font-size:13px;color:#ffffff;font-weight:bold;}
+
+.attachments {font-family:verdana,arial,helvetica,san-serif;font-size:10px;color:#000000;}
+.attachments A {font-family:verdana,arial,helvetica,san-serif;font-size:10px;;color:#000000;text-decoration:underline;}
+
+.bodyhead {font-family:arial,helvetica,verdana,san-serif;font-size:12px;color:#000000;}
+.bodyhead a {font-family:arial,helvetica,verdana,san-serif;font-size:12px;color:#000000;text-decoration:underline;}
+
+.bolder {font-family:verdana,arial,helvetica,san-serif;font-size:12px;color:#000000;font-weight:bold;}
+
+.browsespecial {font:11px verdana,arial,helvetica,san-serif;color:#ff6600;}
+.browsespecial a {font:11px verdana,arial,helvetica,san-serif;color:#000000;text-decoration:underline;}
+
+.browsespec2 {font:11px verdana,arial,helvetica,san-serif;color:#ff6600;}
+.browsespec2 a {font:11px verdana,arial,helvetica,san-serif;color:#000000;text-decoration:none;}
+
+.browsespecial2 {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#000000;text-decoration:underline;}
+.browsespecial2 a {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#000000;text-decoration:underline;}
+
+.browsespec3 {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#000000;}
+.browsespec3 a {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#000000;}
+
+.cdirectspecial {font:11px verdana,arial,helvetica,san-serif;color:#000000;}
+.cdirectspecial a {font:11px verdana,arial,helvetica,san-serif;color:#ff6600;text-decoration:underline;}
+
+.cdintro {font:12px verdana,arial,helvetica,san-serif;}
+.cdintro a {font:12px verdana,arial,helvetica,san-serif;color:#000000;}
+
+.cdintrobold {font:12px verdana,arial,helvetica,san-serif;font-weight:bold;}
+.cdintrobold a {font:12px verdana,arial,helvetica,san-serif;font-weight:bold;color:#000000;}
+
+.dialogue {font:11px arial,verdana,helvetica,san-serif;color:#000000;}
+.dialogue a {font:11px arial,verdana,helvetica,san-serif;color:#000000;text-decoration:none;}
+
+.footertab {font-family:arial,verdana,helvetica,san-serif;font-size:11px;color:#000000;}
+
+.footertabon {font-family:arial,verdana,helvetica,san-serif;font-size:11px;color:#ff6600;}
+
+.footertext {font-family:arial,verdana,helvetica,san-serif;font-size:11px;color:#000000;}
+.footertext a {font-family:arial,verdana,helvetica,san-serif;font-size:11px;color:#000000;text-decoration:none;}
+
+.getp {font:12px verdana,arial,helvetica,san-serif;}
+.getp a {font:12px verdana,arial,helvetica,san-serif;text-decoration:underline;}
+.getp a:visited {font:12px verdana,arial,helvetica,san-serif;text-decoration:underline;color:#ff6600;}
+
+.guide {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#000000;}
+.guide A {font-family:verdana,arial,helvetica,san-serif;font-size:11px;;color:#000000;text-decoration:underline;}
+
+.guidesheader {font:12px verdana,arial,helvetica,san-serif;color:#ff6600;text-decoration:none;font-weight:bold;}
+
+.guideslinks   {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#ff6600;font-weight:bold;}
+.guideslinks a  {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#000000;text-decoration:underline;font-weight:normal;}
+
+.header1 {font:15px verdana,arial,helvetica,san-serif;color:#000000;font-weight:bold;}
+
+.headertab2 {font-family:verdana,arial,helvetica,san-serif;font-size:16px;font-weight:bold;color:#000000;}
+
+.headertab1 {font-family:verdana,arial,helvetica,san-serif;font-size:12px;font-weight:bold;color:#000000;}
+
+.headertabprof {font-family:verdana,arial,helvetica,san-serif;font-size:14px;font-weight:bold;color:#000000;}
+
+.hints {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#000000;}
+.hints A {font-family:verdana,arial,helvetica,san-serif;font-size:11px;;color:#000000;text-decoration:underline;}
+
+.hlinkclass {font:11px verdana,arial,helvetica,san-serif;color:#000000;text-decoration:none;}
+.hlinkclass a {font:11px verdana,arial,helvetica,san-serif;color:#000000;text-decoration:underline;}
+
+.inforeturn {left:300;top:520;position:absolute;font-family:verdana,arial,helvetica,san-serif;font-size:12px;font-weight:bold;}
+
+.journalslist {font-family:arial,verdana,helvetica,san-serif;font-size:12px;color:#3e4a8a;}
+.journalslist a {font-family:arial,verdana,helvetica,san-serif;font-size:12px;;color:#3e4a8a;text-decoration:underline;}
+
+.list_item	{list-style-type:lower-roman;padding-top:5px;padding-left:0;margin-left:-15px;}
+
+.loginbox {font-family:verdana,arial,helvetica,san-serif;font-size:10px;color:#000000;}
+.loginbox a {font-family:verdana,arial,helvetica,san-serif;font-size:10px;color:#000000;}
+
+.logout {font-family:verdana,arial,helvetica,san-serif;}
+.logout a {font-family:verdana,arial,helvetica,san-serif;font-size:10px;color:#ffffff;}
+
+.myjournalsnew a {font-family:arial,verdana,helvetica,san-serif;font-size:12px;color:#000000;text-decoration:none;}
+
+.navhead {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#000000;}
+
+.newlinks {font:11px verdana,arial,helvetica,san-serif;color:#000000;}
+.newlinks a {font:11px verdana,arial,helvetica,san-serif;color:#000000;text-decoration:underline;}
+
+.newjournalstyle a {font-family:arial,verdana,helvetica,san-serif;font-size:12px;color:#000000;text-decoration:underline;} /* this style not present in general.css */
+
+.normal {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#000000;}
+.normal A {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#000000;text-decoration:underline;}
+.normalbold {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#000000;font-weight:bold;}
+.normalbold a {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#000000;font-weight:bold;text-decoration:underline;}
+.normalred {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#ff6600;text-decoration:underline;}
+.normalredbold {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#ff6600;text-decoration:underline;font-weight:bold;}
+
+.pdfcheck {font-family:verdana,arial,helvetica,san-serif;font-size:12px;color:#000000;}
+.pdfcheck a {font-family:verdana,arial,helvetica,san-serif;font-size:12px;;color:#000000;text-decoration:none;}
+
+.picker2 {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#000000;font-weight:bold;}
+.pickercurrent2 {font-family:verdana,arial,helvetica,verdana,san-serif;font-size:11px;color:#FF6600;font-weight:bold;}
+
+.picker {font-family:verdana,arial,verdana,helvetica,san-serif;font-size:11px;color:#000000;line-height:11px;}
+.picker a  {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#000000;text-decoration:none;line-height:11px;}
+
+.pickercurrent {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#FF6600;}
+.pickercurrent a {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#FF6600;text-decoration:none;}
+
+.small {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#000000;}
+.small a {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#000000;}
+
+.smalla {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#000000;}
+.smalla a {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#000000;}
+
+.selboxfont {font-family:verdana,arial,helvetica,san-serif;font-size:10px;color:#000000;}
+
+.smallred {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#ff6600;text-decoration:underline;}
+.smallredbold {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#ff6600;font-weight:bold;text-decoration:underline;}
+
+.specialjournal {font:11px verdana,arial,helvetica,san-serif;color:#000000;}
+.specialselectbox {font:10px arial,verdana,helvetica,san-serif;color:#000000;}
+
+.tellus {font:10px verdana,arial,helvetica,san-serif;color:#ff6600;text-decoration:none;font-weight:bold;}
+
+.textbox {font-family:verdana,arial,helvetica,san-serif;font-size:11px;color:#ffffff;}
+
+.ul	{padding-top:0; margin-top:0}
+
+.vj1 a {font:10px verdana,arial,helvetica,san-serif;color:#000000;text-decoration:none;font-weight:bold;}
+.vj2{font:10px verdana,arial,helvetica,san-serif;color:#000000;text-decoration:none;font-weight:bold;}
+.vj2 a {font:10px verdana,arial,helvetica,san-serif;color:#ff6600;text-decoration:none;font-weight:bold;}
+.vj2cd	{font:10px verdana,arial,helvetica,san-serif;color:#ff0000;text-decoration:none;font-weight:bold;}
+.vj2cd a {font:10px verdana,arial,helvetica,san-serif;color:#ff0000;text-decoration:none;font-weight:bold;}

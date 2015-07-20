@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="../screen.css" />
+<link rel="stylesheet" type="text/css" href="../../colouring.css" />
+<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../cornipickle.js"></script>
+<script type="text/javascript" src="/probe"></script>
+<title>Popover's size - Cornipickle</title>
+
+
+<script type="text/javascript">
+// <![CDATA[
+$(document).ready(function() {
+    toggled = false;
+    // Put Cornipickle codde in global var
+    cornipickle_code = $(".cornipickle-code").text();
+    // Colourize each code snippet
+    cornipickle_colourize_all();
+    javascript_colourize_all();
+
+    // Remove onmouseup event on some elements
+    $(".no-event").mouseup(function(event) {
+      event.stopPropagation();
+    });
+    // Add handler to button
+    $("#to-cornipickle").click(function(event) {
+        add_to_cornipickle(cornipickle_code);
+        event.stopPropagation(); // To avoid a call to Cornipickle
+      }).mouseup(function(event) {
+        event.stopPropagation(); // To avoid a call to Cornipickle
+      });
+    // Button code
+    $("#popover-toggle").click(function() {
+        if (toggled)
+        {
+          $("#popover").css({"display": "none"});
+        }
+        else
+        {
+          $("#popover").css({"display": "block"});
+        }
+        toggled = !toggled;
+    });
+    var size_toggled = false;
+    $("#popover-size-change").click(function() {
+      if (size_toggled)
+      {
+        $("#popover").css({"width": "300px"});
+      }
+      else
+      {
+        $("#popover").css({"width": "750px"});
+      }
+      size_toggled = !size_toggled;
+    });
+});
+// ]]>
+</script>
+
+<!--Style for the popover element-->
+<style type="text/css">
+    .playground {
+      position: relative;
+    }
+    .playground #popover {
+      background: red;
+      opacity: 0.5;
+      width: 300px;
+      height: 100px;
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 5;
+    }
+</style>
+
+
+</head>
+
+<body>
+
+<div id="contents">
+<h1>Example</h1>
+
+<p class="backmenu"><a href="../index.html" class="no-event">Index</a> » <a href="index.html" class="no-event">Popovers</a></p>
+
+<div class="playground">
+
+<br />
+<p>Hello!</p>
+<br />
+<div id="popover"></div>
+
+</div>
+
+<!-- Cornipickle explanation -->
+<div id="cornipickle-explanation" class="nocornipickle">
+
+<h2>The guideline to respect</h2>
+<p style="max-width: 750px;">Popovers should always be small in size (as a rule of thumb, they should not cover more than a third of their parent window) and low in complexity. They should always appear as subordinates to their parent windows.</p>
+<a href="https://developer.gnome.org/hig/stable/popovers.html.en#general-guidelines">Link to the guideline (1st point)</a>
+<p><button id="popover-toggle">Toggle popover</button><button id="popover-size-change">Change popover's size</button></p>
+
+<div id="cornipickle-section" class="nocornipickle">
+
+  <h2>Detect it with Cornipickle</h2>
+
+  <div class="cornipickle-square no-event">
+
+  <p class="button"><button id="to-cornipickle">Add to Cornipickle</button></p>
+
+  <div class="cornipickle-code">
+  
+  We say that $x does not cover more than one third of $y when (
+    (Not(($x's width * $x's height) is greater than (($y's width * $y's height) / 3 )))
+    Or
+    ($x's display matches "none")
+  ).
+
+   """
+    @name Same popover's size
+    @description An popover should not take more than one third of the parent container
+    @severity Warning
+  """
+
+  For each $playground in $(.playground) (
+    For each $popover in $(#popover) (
+      $popover does not cover more than one third of $playground
+    )
+  ).
+
+  </div>
+
+  </div>
+
+</div>
+
+<div id="procedural-section" class="nocornipickle no-event">
+
+<h2>Procedural Equivalent</h2>
+
+<div class="procedural-equivalent jquery no-event">
+var popoverSize = $("#popover").width * $("#popover").height;
+var playgroundSize = $(".playground").width * $(".playground").height;
+
+if (popoverSize > playgroundSize / 3)
+  console.log("Error!");
+</div>
+
+</div>
+
+</div> <!-- /explanation -->
+
+<div id="footer" class="nocornipickle">
+<hr />
+&copy; 2015 LIF
+</div>
+
+</div> <!-- /contents -->
+
+</body>
+</html>
+

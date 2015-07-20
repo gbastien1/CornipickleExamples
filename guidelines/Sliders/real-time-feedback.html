@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="../screen.css" />
+<link rel="stylesheet" type="text/css" href="../../colouring.css" />
+<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../cornipickle.js"></script>
+<script type="text/javascript" src="/probe"></script>
+<title>Live slider feedback - Cornipickle</title>
+
+
+<script type="text/javascript">
+// <![CDATA[
+$(document).ready(function() {
+    toggled = false;
+    // Put Cornipickle codde in global var
+    cornipickle_code = $(".cornipickle-code").text();
+    // Colourize each code snippet
+    cornipickle_colourize_all();
+    javascript_colourize_all();
+
+    // Remove onmouseup event on some elements
+    $(".no-event").mouseup(function(event) {
+      event.stopPropagation();
+    });
+    // Add handler to button
+    $("#to-cornipickle").click(function(event) {
+        add_to_cornipickle(cornipickle_code);
+        event.stopPropagation(); // To avoid a call to Cornipickle
+      }).mouseup(function(event) {
+        event.stopPropagation(); // To avoid a call to Cornipickle
+      });
+    // Button code
+    $("#slider").on("input", function() {
+        $("#image").width(this.value);
+        $("#image").height(this.value);
+    });
+});
+
+// ]]>
+</script>
+
+
+</head>
+
+<body>
+
+<div id="contents">
+<h1>Example</h1>
+
+<p class="backmenu"><a href="../index.html" class="no-event">Index</a> » <a href="index.html" class="no-event">Sliders</a></p>
+
+<div class="playground">
+
+<div id="img_container" style="width:300px; height:310px;">
+  <img id="image" alt="placeholder" src="../placeholder.gif" />
+</div>
+<p>Good slider:<input id="slider" type="range" min="10" max="300" value="300"/></p>
+<p>Bad slider:<input id="bad_slider" type="range" min="10" max="300" value="300"/></p>
+
+</div>
+
+<!-- Cornipickle explanation -->
+<div id="cornipickle-explanation" class="nocornipickle">
+
+<h2>The guideline to respect</h2>
+<p style="max-width: 750px;">Ensure that real time feedback is provided, in order to enable the user to make live adjustments. Examples of this include sound from speakers, indicating volume changes, or live feedback in an image editor.</p>
+<a href="https://developer.gnome.org/hig/stable/sliders.html.en#guidelines">Link to the guideline (1st bullet point)</a>
+
+<div id="cornipickle-section" class="nocornipickle">
+
+  <h2>Detect it with Cornipickle</h2>
+
+  <div class="cornipickle-square no-event">
+
+  <p class="button"><button id="to-cornipickle">Add to Cornipickle</button></p>
+
+  <div class="cornipickle-code">
+  
+  We say that $slider was moved when (
+    When $slider is now $nextSlider (
+      Not($slider's value equals $nextSlider's value)
+    )
+  ). 
+
+  We say that An $image has changed when (
+      When $image is now $nextImage (
+        (Not ($image's width equals $nextImage's width))
+        And
+        (Not ($image's height equals $nextImage's height))
+      )
+  ).
+
+  """
+    @name Live slider feedback
+    @description Moving the slider should produce live result
+    @severity Warning
+  """
+  
+ For each $slider in $(.playground input) (
+  Always (
+    If ($slider was moved)
+    Then (
+      There exists $image in $(.playground img) such that (
+        An $image has changed
+      )
+    )
+  )
+ ).
+
+  </div>
+
+  </div>
+
+</div>
+
+<div id="procedural-section" class="nocornipickle no-event">
+
+<h2>Procedural Equivalent</h2>
+
+<div class="procedural-equivalent jquery no-event">
+TODO
+</div>
+
+</div>
+
+</div> <!-- /explanation -->
+
+<div id="footer" class="nocornipickle">
+<hr />
+&copy; 2015 LIF
+</div>
+
+</div> <!-- /contents -->
+
+</body>
+</html>
+
