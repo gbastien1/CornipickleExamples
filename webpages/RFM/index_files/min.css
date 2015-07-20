@@ -1,0 +1,21 @@
+/* Effective stylesheet produced by snapshot save */
+.fbLoginButton { display: block; position: relative; top: 0px; padding: 0px; margin: 0px; border: 0px none; height: 18px; vertical-align: top; }
+.fb_iframe_widget span { vertical-align: top ! important; }
+#wpmem_reg, #wpmem_login { color: rgb(43, 43, 43); font-family: Arial,sans-serif; font-size: 16px; font-weight: 400; line-height: 1.5; }
+#wpmem_reg input[type="text"], #wpmem_reg textarea, #wpmem_login input[type="text"], #wpmem_login input[type="password"] { border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 2px; color: rgb(43, 43, 43); padding: 8px 10px; background: none repeat scroll 0% 0% rgb(255, 255, 255); }
+#wpmem_reg input, #wpmem_reg button, #wpmem_reg select, #wpmem_reg textarea, #wpmem_login input, #wpmem_login button { box-sizing: border-box; font-size: 100%; margin: 0px; max-width: 100%; vertical-align: baseline; }
+#wpmem_reg input:focus, #wpmem_reg textarea:focus, #wpmem_login input:focus { border: 1px solid rgba(0, 0, 0, 0.3); outline: 0px none; }
+#wpmem_reg fieldset, #wpmem_login fieldset { border: medium none; padding: 0px; margin: 40px 0px; }
+#wpmem_reg legend, #wpmem_login legend { font-size: 24px; line-height: 1; font-weight: 700; margin-bottom: 10px; }
+#wpmem_reg .form, #wpmem_login .form { margin: 0px; padding: 0px; }
+#wpmem_reg .div_text, #wpmem_reg .div_textarea, #wpmem_reg .div_select, #wpmem_login .div_text, #wpmem_reg .div_checkbox { width: 74%; margin: 0px 0px 14px; }
+#wpmem_login input[type="checkbox"] { margin: 12px 2px; }
+#wpmem_reg .div_textarea textarea, #wpmem_reg .textbox, #wpmem_login .textbox, #wpmem_reg .username, #wpmem_login .username, #wpmem_reg .password, #wpmem_login .password { width: 100%; }
+#wpmem_login .link-text { width: 74%; }
+#wpmem_reg .button_div, #wpmem_login .button_div { width: 74%; height: 35px; padding: 6px 0px; text-align: right; }
+@media screen and (max-width: 720px) {
+  #wpmem_reg label.text, #wpmem_reg label.checkbox, #wpmem_reg label.textarea, #wpmem_reg label.select, #wpmem_login label, #wpmem_reg .div_text, #wpmem_reg .div_textarea, #wpmem_reg .div_select, #wpmem_login .div_text, #wpmem_reg .div_checkbox, #wpmem_reg .button_div, #wpmem_login .button_div { float: none; }
+  #wpmem_reg label.text, #wpmem_reg label.checkbox, #wpmem_reg label.textarea, #wpmem_reg label.select, #wpmem_login label { width: 90%; padding: 5px 0px 0px; }
+  #wpmem_reg .div_text, #wpmem_reg .div_textarea, #wpmem_reg .div_select, #wpmem_login .div_text, #wpmem_reg .div_checkbox { width: 98%; }
+  #wpmem_reg .button_div, #wpmem_login .button_div, #wpmem_login .link-text { width: 98%; }
+}

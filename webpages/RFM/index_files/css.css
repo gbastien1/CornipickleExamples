@@ -1,0 +1,13 @@
+/* Effective stylesheet produced by snapshot save */
+@font-face {
+  font-family: "Droid Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Droid Sans"), local("DroidSans"), url("urn:not-loaded:http://fonts.gstatic.com/s/droidsans/v6/s-BiyweUPV0v-yRb-cjciPk_vArhqVIZ0nv9q090hN8.woff2") format("woff2"), url("s-BiyweUPV0v-yRb-cjciBsxEYwM7FgeyaSgU71cLG0_woff") format("woff");
+}
+@font-face {
+  font-family: "Droid Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Droid Sans Bold"), local("DroidSans-Bold"), url("urn:not-loaded:http://fonts.gstatic.com/s/droidsans/v6/EFpQQyG9GqCrobXxL-KRMYWiMMZ7xLd792ULpGE4W_Y.woff2") format("woff2"), url("urn:not-loaded:http://fonts.gstatic.com/s/droidsans/v6/EFpQQyG9GqCrobXxL-KRMQFhaRv2pGgT5Kf0An0s4MM.woff") format("woff");
+}
