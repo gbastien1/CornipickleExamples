@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>
+        Confirm Registration</title>
+
+    <script src="index_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript">	
+	    //Disable right mouse click Script 
+        document.onmousedown="if (event.button==2) return false"; 
+        document.oncontextmenu=new Function("return false"); 
+        
+        document.onkeydown = showDown; 
+
+        function showDown(evt) { 
+        evt = (evt)? evt : ((event)? event : null); 
+        if (evt) { 
+        if (event.keyCode == 8 && (event.srcElement.type!= "text" && event.srcElement.type!= "textarea" && event.srcElement.type!= "password")) { 
+        // When backspace is pressed but not in form element 
+        cancelKey(evt); 
+        } 
+        else if (event.keyCode == 116) { 
+        // When F5 is pressed 
+        cancelKey(evt); 
+        } 
+        else if (event.keyCode == 122) { 
+        // When F11 is pressed 
+        cancelKey(evt); 
+        } 
+        else if (event.ctrlKey && (event.keyCode == 78 || event.keyCode == 82)) { 
+        // When ctrl is pressed with R or N 
+        cancelKey(evt); 
+        } 
+        else if (event.altKey && event.keyCode==37 ) { 
+        // stop Alt left cursor 
+        return false; 
+        } 
+        } 
+        } 
+
+        function cancelKey(evt) { 
+        if (evt.preventDefault) { 
+        evt.preventDefault(); 
+        return false; 
+        } 
+        else { 
+        evt.keyCode = 0; 
+        evt.returnValue = false; 
+        } 
+        } 
+        
+        //==============================
+
+		if (top == self)
+			top.location.href = 'default.asp';
+	
+
+		//Required Questions Counter
+		var requireAnswer = 0;
+		
+		function validateRequiredQuestions(isRequired, isChecked)
+		{
+			if(isRequired == "True")
+			{
+				if(isChecked)
+					requireAnswer -= 1;
+				else
+					requireAnswer += 1;
+			}
+			
+			if(requireAnswer==0)
+			{			
+				document.conf.continueButton.disabled=false;
+				document.conf.continueButton.setAttribute("class","button");
+			}
+
+			else
+			{
+			    document.conf.continueButton.disabled=true;
+			    document.conf.continueButton.removeAttribute("class");
+			}
+		}
+
+		
+    </script>
+
+    <style type="text/css">
+        @import url(cssSiteStyle.aspx);
+    </style>
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-18082482-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+        function show_terms() {
+            window.open('http://www.elsevier.com/useragreement', 'ELS_UserAgreement');
+            return false;
+        }
+    </script>
+
+</head>
+<body>
+    <div class="left_side">
+        <h3>
+            Confirm Registration</h3>
+    </div>
+    <div class="right_side">
+        <form name="conf" action="reg.asp" method="post" onsubmit="if (this.submitted) return false; this.submitted = true; return true;">
+        <div>
+            
+            <!--// Karthikeyan D, 19-Nov-2011, CR193
+			    // Added new hidden for newly added fields in registration form for 
+			    // submitting to the nxt or previous screen -->
+            <input name="firstname" value="Sylvain" type="hidden">
+            <input name="middlename" value="" type="hidden">
+            <input name="lastname" value="Hallé" type="hidden">
+            <input name="title" value="Prof." type="hidden">
+            <input name="degree" value="" type="hidden">
+            <input name="username" value="shalle@acm.org" type="hidden">
+            <input name="nickname" value="" type="hidden">
+            <input name="reviewer" value="1" type="hidden">
+            <input name="position" value="Associate Professor" type="hidden">
+            <input name="department" value="" type="hidden">
+            <input name="institution" value="Université du Québec à Chicoutimi" type="hidden">
+            <input name="streetaddress" value="555, boul. de l'Université" type="hidden">
+            <input name="streetaddress2" value="" type="hidden">
+            <input name="streetaddress3" value="" type="hidden">
+            <input name="streetaddress4" value="" type="hidden">
+            <input name="city" value="Chicoutimi" type="hidden">
+            <input name="state_or_province" value="Québec" type="hidden">
+            <input name="zip_or_postal_code" value="G7H2B1" type="hidden">
+            <input name="country" value="CANADA" type="hidden">
+            <input name="ISOcode" value="ca" type="hidden">
+            <input name="securityquestion" value="2" type="hidden">
+            <input name="securityanswer" value="Kiki" type="hidden">
+            <input name="addrtype" value="work" type="hidden">
+            <input name="telephone_number" value="+14185455011" type="hidden">
+            <input name="telephone2_number" value="" type="hidden">
+            <input name="phone2_type" value="mobile" type="hidden">
+            <input name="fax_number" value="" type="hidden">
+            <input name="email_address" value="shalle@acm.org" type="hidden">
+            <input name="sec_email" value="" type="hidden">
+            <input name="contact_type" value="email" type="hidden">
+            <input name="classids" value="" type="hidden">
+            <input name="keywordIDs" value="" type="hidden">
+            <input name="password" value="QSwrMGL4JTjVu87N" type="hidden">
+            <input name="confirmpassword" value="QSwrMGL4JTjVu87N" type="hidden">
+            <input name="orcid" value="0000-0002-4406-6154" type="hidden">
+            
+            <fieldset>
+                <legend>Please confirm the following very important information:</legend><span class="label">
+                    First Name:</span> <span class="texthighlight" style="line-height: 20px">
+                        Sylvain</span><br>
+                <span class="label">Last Name:</span> <span class="texthighlight" style="line-height: 20px">
+                    Hallé</span><br>
+                <span class="label">E-mail Address:</span> <span class="texthighlight" style="line-height: 20px">
+                    shalle@acm.org</span><br>
+                <span class="label">Country:</span> <span class="texthighlight" style="line-height: 20px">
+                    CANADA</span><br>
+                <div class="warningbox">
+                    <strong>Privacy Policy</strong><br>  Our staff at 
+Elsevier B.V. and its affiliated companies worldwide as well as 
+societies whose journals we publish, if applicable, will be contacting 
+you concerning the publishing of your article and occasionally for 
+marketing purposes.<br><br>
+                    <input id="cb" value="1" name="answer1" onclick="validateRequiredQuestions('False', this.checked)" type="checkbox">&nbsp;&nbsp;We
+ respect your privacy. Please tick the box if you do not wish to receive
+ news, promotions and special offers about our products and services.<br><br>
+                    <input name="question_id_list" value="1" type="hidden">
+                    </div><div>
+                </div>
+                <div class="warningbox" style="border: 0px; margin-top: 0px; padding-top: 0px">
+                    <input checked="checked" value="1" name="agreeterms" onclick="validateRequiredQuestions('True', this.checked)" type="checkbox">&nbsp;
+                    <span>I have read and understand the <a href="#" onclick="show_terms();">Registered
+                        User Agreement</a> and agree to be bound by all of its terms.</span>
+                    <br>
+
+                    <script type="text/javascript">
+                        requireAnswer += 1;
+                    </script>
+
+                </div>
+                <div class="buttonAlign">
+                    <input name="prevpage" class="button" onclick="document.conf.action='register.asp';document.conf.submit();" onmouseover="this.className='button buttonhov'" onmouseout="this.className='button'" onfocus="this.className='button buttonhov'" onblur="this.className='button'" value="&lt;&lt; Previous Page" type="button">&nbsp;
+                    <input id="continue" class="button" name="continueButton" onmouseover="this.className='button buttonhov'" onmouseout="this.className='button'" onfocus="this.className='button buttonhov'" onblur="this.className='button'" value="Continue &gt;&gt;" type="submit">
+                </div>
+            </fieldset>
+            
+        </div>
+        </form>
+    </div>
+    
+
+    <script type="text/javascript">
+        if (requireAnswer > 0) {
+            document.conf.continueButton.disabled = true;
+            document.conf.continueButton.removeAttribute("class");
+        }
+    </script>
+
+    
+
+
+</body></html>

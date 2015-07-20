@@ -1,0 +1,24 @@
+/* Effective stylesheet produced by snapshot save */
+body { margin: 0px; padding: 0px; }
+body, td, th, input, textarea, select { font-size: 11px; font-weight: normal; font-family: Arial,Verdana,sans-serif; color: rgb(106, 95, 79); }
+form, img, fieldset, legend { margin: 0px; padding: 0px; border: 0px none; }
+h1, h2, h3, h4, h5, h6 { margin: 0px; padding: 0px; font-size: 11px; }
+hr { display: none; }
+img, input, label, select { vertical-align: middle; }
+a { color: rgb(106, 95, 79); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.clear { clear: both; display: block; font-size: 1px; height: 1px; }
+.inputText, .inputPassword { background: transparent none repeat scroll 0% 0%; border: 0px none; }
+.inputArea { background: transparent none repeat scroll 0% 0%; border: 0px none; }
+.inputSelect { background: transparent none repeat scroll 0% 0%; border: 0px none; }
+.links ul, .links ul li { margin: 0px; padding: 0px; list-style-type: none; }
+hr, .customer, .header .navigation, .footer .navigation, .signs .navigation, .brands .navigation, .engagments .navigation, .labels .navigation, .module .navigation, .faqs .navigation, .steps, .account .button, .module .arrows, .summaryBack, .cardCheck, .quick, .eventDetail .head .text a, .quizzZone .message, .quizzZone .result, .quizzZone .button, .path, .left .navigation, .left .tg, .left .animation, .left .downloads, .tools, .shop, .links, .sendFriend, .arguments .subLeft fieldset, .signs .intro, .inputButton, .selecteds .inputSelect { display: none; }
+h1 { clear: both; margin: 20px 0px; color: rgb(218, 218, 218); font-size: 25px; font-weight: normal; }
+h2 { margin: 20px 0px 10px; font-size: 15px; }
+.left { margin: 10px 0px; }
+fieldset legend { margin: 0px 0px 5px; font-size: 13px; font-weight: bold; }
+fieldset .intro { margin: 10px 0px; }
+.field { margin: 0px 0px 5px; padding: 5px 0px 0px; border-top: 1px solid rgb(218, 218, 218); }
+.field .label { float: left; width: 30%; font-weight: bold; }
+.field .input { float: right; width: 68%; }
+.footer { margin: 10px 0px 0px; padding: 10px 0px; border-top: 26px solid rgb(243, 242, 242); }

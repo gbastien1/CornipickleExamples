@@ -1,0 +1,19 @@
+/* Effective stylesheet produced by snapshot save */
+@font-face {
+  font-family: "Anton";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Anton"), url("urn:not-loaded:http://fonts.gstatic.com/s/anton/v6/o-91-t7-bPc7W26HmS2N4Q.woff2") format("woff2"), url("tilmJBBU81h1G7ZsdY3Hmw_woff") format("woff");
+}
+@font-face {
+  font-family: "Enriqueta";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Enriqueta-Regular"), url("urn:not-loaded:http://fonts.gstatic.com/s/enriqueta/v5/-KTKVm0Mx9ZCRXL9CXVIbVtXRa8TVwTICgirnJhmVJw.woff2") format("woff2"), url("-KTKVm0Mx9ZCRXL9CXVIbT8E0i7KZn-EPnyo3HZu7kw_woff") format("woff");
+}
+@font-face {
+  font-family: "Enriqueta";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Enriqueta-Bold"), url("urn:not-loaded:http://fonts.gstatic.com/s/enriqueta/v5/I27Pb-wEGH2ajLYP0QrtSOgdm0LZdjqr5-oayXSOefg.woff2") format("woff2"), url("I27Pb-wEGH2ajLYP0QrtSHhCUOGz7vYGh680lGh-uXM_woff") format("woff");
+}
