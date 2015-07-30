@@ -19,7 +19,8 @@
 <script type="text/javascript">
 // <![CDATA[
 $(document).ready(function() {
-    toggled = false;
+    affToggled = false;
+    desToggled = false;
     // Put Cornipickle codde in global var
     cornipickle_code = $(".cornipickle-code").text();
     // Colourize each code snippet
@@ -38,8 +39,8 @@ $(document).ready(function() {
         event.stopPropagation(); // To avoid a call to Cornipickle
       });
     // Button code
-    $("#color-toggle").click(function() {
-        if (toggled)
+    $("#aff-toggle").click(function() {
+        if (affToggled)
         {
           $("#normal").attr("class", "normal");
         }
@@ -47,7 +48,18 @@ $(document).ready(function() {
         {
           $("#normal").attr("class", "affirmative");
         }
-        toggled = !toggled;
+        affToggled = !affToggled;
+    });
+     $("#des-toggle").click(function() {
+        if (desToggled)
+        {
+          $("#normal").attr("class", "normal");
+        }
+        else
+        {
+          $("#normal").attr("class", "destructive");
+        }
+        desToggled = !desToggled;
     });
 });
 // ]]>
@@ -91,7 +103,7 @@ content item, can be given a destructive style. This highlights the button by
 coloring it, and acts as a warning to the user. <br />
 Each view should only include a single suggested or destructive button.</p>
 <a href="https://developer.gnome.org/hig/stable/buttons.html.en#suggested-and-destructive">Link to the guideline</a>
-<p><button id="color-toggle">Toggle color</button></p>
+<p><button id="aff-toggle">Toggle affirmative</button><button id="des-toggle">Toggle destructive</button></p>
 
 <div id="cornipickle-section" class="nocornipickle">
 
@@ -105,7 +117,7 @@ Each view should only include a single suggested or destructive button.</p>
 
   We say that $e is suggested when (
     # Definition of suggested in the context
-    $e's background matches "rgb\(0, 200, 0\)"
+    $e's background matches "#00C800"
   ).
 
   We say that $e is destructive when (

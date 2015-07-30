@@ -94,14 +94,30 @@ $(document).ready(function() {
 		var cornipickle_code = $("#cornipicklecode").text();
 		add_to_cornipickle(cornipickle_code);
 	}, 1000);
-	$(".valider").click(function() {
-		window.location = 'Monoprix-bug/index.html';
+	$("#htmldiv li").on("click", function() {
+		$(this).replaceWith("<li>" + $(this).html().replace(/\d{5}/, $(".CPinput").val()) + "<li>");
+	});
+	//change content when page changes (script was removed by snapshot capture)
+	$("#p1").click(function() {
+		$("#page2").hide();
+		$("#page3").hide();
+		$("#page1").show();
+	});
+	$("#p2").click(function() {
+		$("#page1").hide();
+		$("#page3").hide();
+		$("#page2").show();
+	});
+	$("#p3").click(function() {
+		$("#page1").hide();
+		$("#page2").hide();
+		$("#page3").show();
 	});
 });
 </script>
 
 </head>
-	<body id="ctl00_ctl00_body" onload="" onunload="" lang="fr">
+	<body id="ctl00_ctl00_body" lang="fr">
 
 
 <!--Cornipickle code invisible div -->
@@ -117,13 +133,11 @@ We say that I click on $x when (
 """
 There exists $button in $(.valider) such that ( 
 	There exists $input in $(.CPinput) such that (
-		For each $item in $(.results li) (
+		For each $item in $(#htmldiv li) (
 	    	If (I click on $button)
 	    	Then
 	    	(
-	    		Next (
-	    			$item's text matches $input's text
-	    		)
+	    		$item's text matches $input's text
 	    	)
 		)
 	)
@@ -461,7 +475,7 @@ There exists $button in $(.valider) such that (
 											<input name="ctl00$ctl00$ContentPlaceHolder1$Search1$txt_cp" value="75016" maxlength="5" id="ctl00_ctl00_ContentPlaceHolder1_Search1_txt_cp" class="inputText CPinput" type="text">
 										</div>
 										<!-- Button -->
-										<a href="Monoprix-bug/index.html" class="valider" style="color:white;font-size:17px;font-weight:bold;float:right">Valider</a>
+										<a href="javascript:void(0)" class="valider" style="color:white;font-size:17px;font-weight:bold;float:right">Valider</a>
 										<!--
 	                                    <div id="div_reco" style="display:none">
 			                                    Résultat de la recotopo :
@@ -619,7 +633,7 @@ There exists $button in $(.valider) such that (
 							<!-- Title --><h2>Résultats :</h2>
 
 							<!-- Pager -->
-							<div class="pager" id="pagerMag"><span>Page :</span><ul><li class="on"><a href="javascript:void(0);">1</a></li><li><a href="javascript:void(0);">2</a></li><li><a href="javascript:void(0);">3</a></li></ul></div>
+							<div class="pager" id="pagerMag"><span>Page :</span><ul><li id="p1" class="on"><a href="javascript:void(0);">1</a></li><li id="p2"><a href="javascript:void(0);">2</a></li><li id="p3"><a href="javascript:void(0);">3</a></li></ul></div>
 							
 							<!-- List -->
 							<div class="list" id="htmldiv"><ul id="page1" style="display: block;"><li><a href="http://www.monoprix.fr/trouver-mon-magasin/monoprix-passy-plaza-paris-42.html" title="Monoprix - PASSY PLAZA"><strong>Monoprix</strong><br>PASSY PLAZA<br></a>53 RUE DE PASSY<br>75016  PARIS<br></li><li><a href="http://www.monoprix.fr/trouver-mon-magasin/monoprix-monoprix-belles-feuilles-paris-1201.html" title="Monoprix - Monoprix Belles Feuilles"><strong>Monoprix</strong><br>Monoprix Belles Feuilles<br></a>22bis/24 Rue des Belles Feuilles<br>75016 Paris<br></li><li><a href="http://www.monoprix.fr/trouver-mon-magasin/monoprix-passy-mg-paris-1204.html" title="Monoprix - PASSY MG"><strong>Monoprix</strong><br>PASSY MG<br></a>18 RUE DE PASSY<br>75016  PARIS<br></li><li><a href="http://www.monoprix.fr/trouver-mon-magasin/monoprix-mozart-paris-1321.html" title="Monoprix - MOZART"><strong>Monoprix</strong><br>MOZART<br></a>49 RUE D'AUTEUIL<br>75016  PARIS<br></li><li><a href="http://www.monoprix.fr/trouver-mon-magasin/monoprix-auteuil-paris-1322.html" title="Monoprix - AUTEUIL"><strong>Monoprix</strong><br>AUTEUIL<br></a>60-68 RUE D'AUTEUIL<br>75016  PARIS<br></li></ul><ul id="page2" style="display:none"><li><a href="http://www.monoprix.fr/trouver-mon-magasin/monop-victor-hugo-paris-2043.html" title="Monop' - VICTOR HUGO"><strong>Monop'</strong><br>VICTOR HUGO<br></a>29 AVENUE VICTOR HUGO<br>75016 PARIS<br></li><li><a href="http://www.monoprix.fr/trouver-mon-magasin/monop-boulainvilliers-paris-2055.html" title="Monop' - BOULAINVILLIERS"><strong>Monop'</strong><br>BOULAINVILLIERS<br></a>7 RUE BOULAINVILLIERS<br>75016 PARIS<br></li><li><a href="http://www.monoprix.fr/trouver-mon-magasin/monop-exelmans-paris-2079.html" title="Monop' - EXELMANS"><strong>Monop'</strong><br>EXELMANS<br></a>148, Avenue de Versailles<br>75016 PARIS<br></li><li><a href="http://www.monoprix.fr/trouver-mon-magasin/monop-beauty-saint-didier-paris-2093.html" title="Monop' Beauty - SAINT-DIDIER"><strong>Monop' Beauty</strong><br>SAINT-DIDIER<br></a>Centre Commercial « LES BELLES FEUILLES » 14, rue des Sablons<br>75116 PARIS<br></li><li><a href="http://www.monoprix.fr/trouver-mon-magasin/monoprix-jasmin-paris-2331.html" title="Monoprix - JASMIN"><strong>Monoprix</strong><br>JASMIN<br></a>13 RUE DE LA SOURCE<br>75016 PARIS<br></li></ul><ul id="page3" style="display:none"><li><a href="http://www.monoprix.fr/trouver-mon-magasin/monop-galilee-paris-4739.html" title="Monop' - GALILEE"><strong>Monop'</strong><br>GALILEE<br></a>41, rue GALILEE<br>75016 PARIS<br></li></ul></div>
