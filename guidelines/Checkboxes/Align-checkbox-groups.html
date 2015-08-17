@@ -4,11 +4,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" type="text/css" href="../screen.css" />
-<link rel="stylesheet" type="text/css" href="../../colouring.css" />
+<link rel="stylesheet" type="text/css" href="/colouring.css" />
 <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
-<script type="text/javascript" src="../cornipickle.js"></script>
+<script type="text/javascript" src="/cornipickle.js"></script>
 <script type="text/javascript" src="/probe"></script>
 <title>checkbox groups alignment - Cornipickle</title>
 <script type="text/javascript">
@@ -36,12 +36,12 @@ $(document).ready(function() {
     $("#align-toggle").click(function() {
         if (toggled)
         {
-          $("#f1").css({"float": "none"});
+          $("#f-1").css({"float": "none"});
           $("#f2").css({"float": "none"});
         }
         else
         {
-          $("#f1").css({"float": "left"});
+          $("#f-1").css({"float": "left"});
           $("#f2").css({"float": "left"});
         }
         toggled = !toggled;
@@ -61,7 +61,7 @@ $(document).ready(function() {
 <div class="playground">
 
   <form >
-    <fieldset id="f1" style="width: 300px">
+    <fieldset id="f-1" style="width: 300px">
       <legend>Colors</legend>
       <input id="c1" type="checkbox" value="Red">
       <label for"c1" id="l_red" class="label">Red</label><br>
@@ -75,7 +75,7 @@ $(document).ready(function() {
       <label for"c3" id="l_apple" class="label">Apple</label><br>
       <input id="c4" type="checkbox" value="Grapes">
       <label for"c5" id="l_grapes" class="label">Grapes</label><br>
-      </fieldset>
+    </fieldset>
   </form>
 
 </div>
@@ -113,8 +113,8 @@ $(document).ready(function() {
     @severity Warning
   """
 
-   For each $f1 in $(#f1) (
-    For each $f2 in $(#f2) (
+   For each $f1 in $(#f2) (
+    For each $f2 in $(#f-1) (
       ($f1's id equals $f2's id)
       Or
       ($f1 and $f2 are vertically aligned)

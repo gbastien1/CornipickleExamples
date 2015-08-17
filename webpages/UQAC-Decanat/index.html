@@ -39,7 +39,10 @@
 <script type="text/javascript" src="/probe"></script>
 <script type="text/javascript">
 //Write cornipickle code here:
-$(document).ready(function() {	
+$(document).ready(function() {
+	 //disable the right mouse click menu
+     $(document)[0].oncontextmenu = function() {return false;}
+
 	setTimeout(function() {
 		var cornipickle_code = $("#cornipicklecode").text();
 		add_to_cornipickle(cornipickle_code);

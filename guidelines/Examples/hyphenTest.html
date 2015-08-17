@@ -6,21 +6,22 @@
 <link rel="stylesheet" type="text/css" href="../screen.css" />
 <link rel="stylesheet" type="text/css" href="/colouring.css" />
 <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
 <script type="text/javascript" src="/cornipickle.js"></script>
 <script type="text/javascript" src="/probe"></script>
-<title>Capitalized labels - Cornipickle</title>
+<title>addition operator test - Cornipickle</title>
 <script type="text/javascript">
 // <![CDATA[
 $(document).ready(function() {
-    toggled1 = false;
-    toggled2 = false;
+    toggled = false;
     // Put Cornipickle codde in global var
     cornipickle_code = $(".cornipickle-code").text();
     // Colourize each code snippet
     cornipickle_colourize_all();
     javascript_colourize_all();
+
     // Remove onmouseup event on some elements
     $(".no-event").mouseup(function(event) {
       event.stopPropagation();
@@ -32,33 +33,38 @@ $(document).ready(function() {
       }).mouseup(function(event) {
         event.stopPropagation(); // To avoid a call to Cornipickle
       });
-
     // Button code
-    $("#Capitalization-toggle1").click(function() {
-        if (toggled1)
+    $("#misalign-toggle").click(function() {
+        if (toggled)
         {
-          $("#l1").text("delicious chocolate Donut");
+          $("#d-d").css({"width": "300px"});
         }
         else
         {
-          $("#l1").text("Delicious chocolate donut");
+          $("#d-d").css({"width": "250px"});
         }
-        toggled1 = !toggled1;
-    });
-    $("#Capitalization-toggle2").click(function() {
-        if (toggled2)
-        {
-          $("#l3").text("Triple chocolate Cookies");
-        }
-        else
-        {
-          $("#l3").text("Triple chocolate cookies");
-        }
-        toggled2 = !toggled2;
+        $("#size").html("<p>" + $("#d-d").width() + "</p>");
+        toggled = !toggled;
     });
 });
 // ]]>
 </script>
+
+
+<style type="text/css">
+  #d-d {
+    width: 300px;
+    height: 100px;
+    border: 0;
+    padding: 0;
+    background-color: #c0c0c0;
+  }
+  #placeholder {
+    width: 100px;
+    height: 30px;
+  }
+</style>
+
 </head>
 
 <body>
@@ -66,16 +72,13 @@ $(document).ready(function() {
 <div id="contents">
 <h1>Example</h1>
 
-<p class="backmenu"><a href="../index.html" class="no-event">Index</a> » <a href="index.html" class="no-event">Radio buttons</a></p>
+<p class="backmenu"><a href="../index.html" class="no-event">Index</a> » <a href="index.html" class="no-event">Examples</a></p>
 
 <div class="playground">
 
-<input id="c1" type="radio" value="delicious boston cream donut">
-<label for"c1" id="l1">delicious chocolate Donut</label><br>
-<input id="c2" type="radio" value="Strawberry banana muffin">
-<label for"c2" id="l2">Strawberry banana muffin</label><br>
-<input id="c3" type="radio" value="Triple chocolate Cookies">
-<label for"c3" id="l3">Triple chocolate Cookies</label><br>
+<div id="placeholder">I'm 100px wide</div>
+<div id="d-d">I'm a 300px wide div</div>
+<p id="size"></p>
 
 </div>
 
@@ -83,9 +86,9 @@ $(document).ready(function() {
 <div id="cornipickle-explanation" class="nocornipickle">
 
 <h2>The guideline to respect:</h2>
-<p style="max-width: 750px;">Use sentence capitalization for radio button labels, for example Switched movement. Provide an access key in the label that allows the user to set the radio button directly from the keyboard.</p>
-<a href="https://developer.gnome.org/hig/stable/radio-buttons.html.en#guidelines">Link to the guideline (5th bullet point)</a>
-<p><button id="Capitalization-toggle1">Toggle 1st capitalization</button><button id="Capitalization-toggle2">Toggle 2nd capitalization</button></p>
+<p>The width of the div must be 300.</p>
+
+<p><button id="misalign-toggle">Toggle width</button></p>
 
 <div id="cornipickle-section" class="nocornipickle">
 
@@ -96,28 +99,16 @@ $(document).ready(function() {
   <p class="button"><button id="to-cornipickle">Add to Cornipickle</button></p>
 
   <div class="cornipickle-code">
-  # We define a predicate using the construct
-  # "We say that &lt;arguments&gt; is/are &lt;predicate name&gt; when".
-
-  # requirement: the labels must be placed inside &lt;label&gt;&lt;/label&gt; tags
-  # and they must contain letters only
-
-  #TODO: accesskey?
-
-  We say that $x is capitalized when (
-    $x's text matches "^([A-Z][a-z]*(?:\s[a-z]*)*)$"
-  ).
-
   """
-    @name Sentence capitalized labels
-    @description All radio button labels should be sentence capitalized
+    @name Simple number test
+    @description The width of the div must be 300
     @severity Warning
   """
-
-  For each $label in $(label) (
-    $label is capitalized
+  There exists $d in $(#d-d) such that (
+    There exists $div in $(#placeholder) such that (
+      $d's width equals ( $div's width + 200 )
+    )
   ).
-
   </div>
 
   </div>
@@ -129,11 +120,7 @@ $(document).ready(function() {
 <h2>Procedural Equivalent</h2>
 
 <div class="procedural-equivalent jquery no-event">
-  var t = new RegExp("^([A-Z][a-z]*(?:\s[a-z]*)*)$");
-  $("label").each(function() {
-    if (t.match($(this).text) === null)
-      console.log("Error");
-  });
+TODO
 </div>
 
 </div>
