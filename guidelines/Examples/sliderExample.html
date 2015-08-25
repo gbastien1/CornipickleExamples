@@ -6,11 +6,14 @@
 <link rel="stylesheet" type="text/css" href="../screen.css" />
 <link rel="stylesheet" type="text/css" href="/colouring.css" />
 <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
 <script type="text/javascript" src="/cornipickle.js"></script>
 <script type="text/javascript" src="/probe"></script>
-<title>checkbox groups alignment - Cornipickle</title>
+<title>Live slider feedback - Cornipickle</title>
+
+
 <script type="text/javascript">
 // <![CDATA[
 $(document).ready(function() {
@@ -20,6 +23,7 @@ $(document).ready(function() {
     // Colourize each code snippet
     cornipickle_colourize_all();
     javascript_colourize_all();
+
     // Remove onmouseup event on some elements
     $(".no-event").mouseup(function(event) {
       event.stopPropagation();
@@ -31,24 +35,17 @@ $(document).ready(function() {
       }).mouseup(function(event) {
         event.stopPropagation(); // To avoid a call to Cornipickle
       });
-
     // Button code
-    $("#align-toggle").click(function() {
-        if (toggled)
-        {
-          $("#f-1").css({"float": "none"});
-          $("#f2").css({"float": "none"});
-        }
-        else
-        {
-          $("#f-1").css({"float": "left"});
-          $("#f2").css({"float": "left"});
-        }
-        toggled = !toggled;
+    $("#slider").on("input", function() {
+        $("#image").width(this.value);
+        $("#image").height(this.value);
     });
 });
+
 // ]]>
 </script>
+
+
 </head>
 
 <body>
@@ -56,37 +53,20 @@ $(document).ready(function() {
 <div id="contents">
 <h1>Example</h1>
 
-<p class="backmenu"><a href="../index.html" class="no-event">Index</a> » <a href="index.html" class="no-event">Checkboxes</a></p>
+<p class="backmenu"><a href="../index.html" class="no-event">Index</a> » <a href="index.html" class="no-event">Sliders</a></p>
 
 <div class="playground">
 
-  <form >
-    <fieldset id="f-1" style="width: 300px">
-      <legend>Colors</legend>
-      <input id="c1" type="checkbox" value="Red" accesskey="c">
-      <label for"c1" id="l_red" class="label">Red</label><br>
-      <input id="c2" type="checkbox" value="Green">
-      <label for"c2" id="l_green" class="label">Green</label><br>
-    </fieldset>
-
-    <fieldset id="f2" style="width: 300px">
-      <legend>Fruits</legend>
-      <input id="c3" type="checkbox" value="Apple">
-      <label for"c3" id="l_apple" class="label">Apple</label><br>
-      <input id="c4" type="checkbox" value="Grapes">
-      <label for"c5" id="l_grapes" class="label">Grapes</label><br>
-    </fieldset>
-  </form>
+<input id="slider" type="range" min="10" max="300" value="300"/>
 
 </div>
 
 <!-- Cornipickle explanation -->
 <div id="cornipickle-explanation" class="nocornipickle">
 
-<h2>The guideline to respect:</h2>
-<p style="max-width: 750px;">Try to align groups of check boxes vertically rather than horizontally, as this makes them easier to scan visually. Use horizontal or rectangular alignments only if they greatly improve the layout of the window.</p>
-<a href="https://developer.gnome.org/hig/stable/check-boxes.html.en#guidelines">Link to the guideline (10th bullet point)</a>
-<p><button id="align-toggle">Toggle alignment</button></p>
+<h2>The guideline to respect</h2>
+<p style="max-width: 750px;">Ensure that real time feedback is provided, in order to enable the user to make live adjustments. Examples of this include sound from speakers, indicating volume changes, or live feedback in an image editor.</p>
+<a href="https://developer.gnome.org/hig/stable/sliders.html.en#guidelines">Link to the guideline (1st bullet point)</a>
 
 <div id="cornipickle-section" class="nocornipickle">
 
@@ -97,28 +77,15 @@ $(document).ready(function() {
   <p class="button"><button id="to-cornipickle">Add to Cornipickle</button></p>
 
   <div class="cornipickle-code">
-  # We define a predicate using the construct
-  # "We say that &lt;arguments&gt; is/are &lt;predicate name&gt; when".
-
   
-  We say that $x and $y are vertically aligned when (
-    (Not ($x's top equals $y's top) )
-    And
-    ($x's left equals $y's left)
-  ).
-
   """
-    @name Align checkbox groups
-    @description Align groups of checkboxes vertically instead of horizontally
+    @name Slider's value
+    @description The slider should have a value of 300
     @severity Warning
   """
-
-   For each $f1 in $(#f2) (
-    For each $f2 in $(#f-1) (
-      ($f1's id equals $f2's id)
-      Or
-      ($f1 and $f2 are vertically aligned)
-    )
+  
+  For each $slider in $(#slider) (
+    $slider's value equals 300
   ).
 
   </div>
@@ -132,7 +99,7 @@ $(document).ready(function() {
 <h2>Procedural Equivalent</h2>
 
 <div class="procedural-equivalent jquery no-event">
- TODO
+TODO
 </div>
 
 </div>
@@ -148,3 +115,4 @@ $(document).ready(function() {
 
 </body>
 </html>
+

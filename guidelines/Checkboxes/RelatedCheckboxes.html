@@ -10,7 +10,7 @@
 <script type="text/javascript" src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
 <script type="text/javascript" src="/cornipickle.js"></script>
 <script type="text/javascript" src="/probe"></script>
-<title>checkbox groups alignment - Cornipickle</title>
+<title>Checkbox labels capitalization - Cornipickle</title>
 <script type="text/javascript">
 // <![CDATA[
 $(document).ready(function() {
@@ -33,22 +33,38 @@ $(document).ready(function() {
       });
 
     // Button code
-    $("#align-toggle").click(function() {
+    $("#toggle").click(function() {
         if (toggled)
         {
-          $("#f-1").css({"float": "none"});
-          $("#f2").css({"float": "none"});
+          $("#d").css("width", "0");
+          $("#d").css("height", "0");
         }
         else
         {
-          $("#f-1").css({"float": "left"});
-          $("#f2").css({"float": "left"});
+          $("#d").css("width", "500px");
+          $("#d").css("height", "10px");
         }
         toggled = !toggled;
     });
+
+    if ($("#c1").prop('checked'))
+    {
+      $("#b").prop('disabled', 'true');
+    }
+    else
+    {
+      $("#b").prop('disabled', 'false');
+    }
 });
 // ]]>
 </script>
+
+<style type="text/css">
+  .playground button {
+    padding: 1em;
+  }
+</style>
+
 </head>
 
 <body>
@@ -60,33 +76,22 @@ $(document).ready(function() {
 
 <div class="playground">
 
-  <form >
-    <fieldset id="f-1" style="width: 300px">
-      <legend>Colors</legend>
-      <input id="c1" type="checkbox" value="Red" accesskey="c">
-      <label for"c1" id="l_red" class="label">Red</label><br>
-      <input id="c2" type="checkbox" value="Green">
-      <label for"c2" id="l_green" class="label">Green</label><br>
-    </fieldset>
-
-    <fieldset id="f2" style="width: 300px">
-      <legend>Fruits</legend>
-      <input id="c3" type="checkbox" value="Apple">
-      <label for"c3" id="l_apple" class="label">Apple</label><br>
-      <input id="c4" type="checkbox" value="Grapes">
-      <label for"c5" id="l_grapes" class="label">Grapes</label><br>
-    </fieldset>
-  </form>
-
+<input id="c1" class="checkbox" type="checkbox">
+<label for"c1" id="l1" class="label">Controling</label><div id="d"></div><button id="b">Affected by Controling</button><br>
+<input id="c2" class="checkbox" type="checkbox">
+<label for"c2" id="l2" class="label">Not controling</label><br>
+<button>Not affected by any</button>
 </div>
 
 <!-- Cornipickle explanation -->
 <div id="cornipickle-explanation" class="nocornipickle">
 
 <h2>The guideline to respect:</h2>
-<p style="max-width: 750px;">Try to align groups of check boxes vertically rather than horizontally, as this makes them easier to scan visually. Use horizontal or rectangular alignments only if they greatly improve the layout of the window.</p>
-<a href="https://developer.gnome.org/hig/stable/check-boxes.html.en#guidelines">Link to the guideline (10th bullet point)</a>
-<p><button id="align-toggle">Toggle alignment</button></p>
+<p style="max-width: 750px;">If toggling a check box affects the sensitivity of other controls, place the check 
+box immediately above or to the left of the controls that it affects. This helps to 
+indicate that the controls are dependent on the state of the check box.</p>
+<a href="https://developer.gnome.org/hig/stable/check-boxes.html.en#guidelines">Link to the guideline (2nd bullet point)</a>
+<p><button id="toggle">Toggle button's position</button></p>
 
 <div id="cornipickle-section" class="nocornipickle">
 
@@ -97,29 +102,52 @@ $(document).ready(function() {
   <p class="button"><button id="to-cornipickle">Add to Cornipickle</button></p>
 
   <div class="cornipickle-code">
-  # We define a predicate using the construct
-  # "We say that &lt;arguments&gt; is/are &lt;predicate name&gt; when".
-
   
-  We say that $x and $y are vertically aligned when (
-    (Not ($x's top equals $y's top) )
-    And
-    ($x's left equals $y's left)
-  ).
+    We say that $x is checked when (
+      $x's checked matches "true"
+    ).
+
+    We say that $x is disabled when (
+      $x's disabled matches "true"
+    ).
+
+    We say that $x affects $y when (                  
+      ( 
+        (If ($x is checked) Then (Not ($y is disabled)))  
+        AND 
+        (If (Not ($x is checked)) Then ($y is disabled))
+      )
+      OR
+      (
+        (If (Not ($x is checked)) Then (Not ($y is disabled)))
+        AND 
+        (If ($x is checked) Then ($y is disabled))
+      )
+    ).
+
+    We say that $x is on the left of $y when (
+      $x's left is less than ($y's left + $x's width)  
+    ).
+
+    We say that $x is above $y when (
+      $x's top is less than ($y's top + $x's height)  
+    ).
 
   """
-    @name Align checkbox groups
-    @description Align groups of checkboxes vertically instead of horizontally
+    @name Related checkboxes
+    @description Related checkboxes are near one another
     @severity Warning
   """
 
-   For each $f1 in $(#f2) (
-    For each $f2 in $(#f-1) (
-      ($f1's id equals $f2's id)
-      Or
-      ($f1 and $f2 are vertically aligned)
+  For each $e in $(.checkbox) (
+    If (
+      There exists $x in $(input) such that (
+        $e affects $x
+      )
     )
-  ).
+    Then
+    (($e is on the left of $x) Or ($e is above $x))
+  ).  
 
   </div>
 
@@ -132,7 +160,7 @@ $(document).ready(function() {
 <h2>Procedural Equivalent</h2>
 
 <div class="procedural-equivalent jquery no-event">
- TODO
+  TODO
 </div>
 
 </div>

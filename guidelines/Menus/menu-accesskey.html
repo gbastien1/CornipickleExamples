@@ -6,11 +6,12 @@
 <link rel="stylesheet" type="text/css" href="../screen.css" />
 <link rel="stylesheet" type="text/css" href="/colouring.css" />
 <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
 <script type="text/javascript" src="/cornipickle.js"></script>
 <script type="text/javascript" src="/probe"></script>
-<title>checkbox groups alignment - Cornipickle</title>
+<title>Menu elements accessKey - Cornipickle</title>
 <script type="text/javascript">
 // <![CDATA[
 $(document).ready(function() {
@@ -20,6 +21,7 @@ $(document).ready(function() {
     // Colourize each code snippet
     cornipickle_colourize_all();
     javascript_colourize_all();
+
     // Remove onmouseup event on some elements
     $(".no-event").mouseup(function(event) {
       event.stopPropagation();
@@ -31,24 +33,44 @@ $(document).ready(function() {
       }).mouseup(function(event) {
         event.stopPropagation(); // To avoid a call to Cornipickle
       });
-
     // Button code
-    $("#align-toggle").click(function() {
+    $("#toggle").click(function() {
         if (toggled)
         {
-          $("#f-1").css({"float": "none"});
-          $("#f2").css({"float": "none"});
+          $('#m2').prop("accessKey", 'a');
+          $('#a2').text("About Us: " + $("#m2").prop("accessKey"))
         }
         else
         {
-          $("#f-1").css({"float": "left"});
-          $("#f2").css({"float": "left"});
+          $('#m2').removeProp("accessKey");
+          $('#a2').text("About Us: " + $("#m2").prop("accessKey"))
         }
         toggled = !toggled;
     });
 });
 // ]]>
 </script>
+
+<style type="text/css">
+nav {
+  border: 0;
+  border-top: 1px solid #c0c0c0;
+  border-bottom: 1px solid #c0c0c0;
+  font-size: 12px;
+  font-weight: bold;
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+nav ul li:focus, nav ul li:active {
+  color: #2B7C93;
+}
+</style>
+
 </head>
 
 <body>
@@ -56,27 +78,28 @@ $(document).ready(function() {
 <div id="contents">
 <h1>Example</h1>
 
-<p class="backmenu"><a href="../index.html" class="no-event">Index</a> » <a href="index.html" class="no-event">Checkboxes</a></p>
+<p class="backmenu"><a href="../index.html" class="no-event">Index</a> » <a href="index.html" class="no-event">
+Menus</a></p>
 
 <div class="playground">
 
-  <form >
-    <fieldset id="f-1" style="width: 300px">
-      <legend>Colors</legend>
-      <input id="c1" type="checkbox" value="Red" accesskey="c">
-      <label for"c1" id="l_red" class="label">Red</label><br>
-      <input id="c2" type="checkbox" value="Green">
-      <label for"c2" id="l_green" class="label">Green</label><br>
-    </fieldset>
+<nav>
+  <ul>
+    <a href="#"><li accesskey='h'>Homepage</li></a>
+    <a href="#"><li id="m2" accesskey='a'>About Us</li></a>
+    <a href="#"><li accesskey='o'>Our Creations</li></a>
+    <a href="#"><li accesskey='c'>Contact Us</li></a>
+  </ul>
+</nav>
 
-    <fieldset id="f2" style="width: 300px">
-      <legend>Fruits</legend>
-      <input id="c3" type="checkbox" value="Apple">
-      <label for"c3" id="l_apple" class="label">Apple</label><br>
-      <input id="c4" type="checkbox" value="Grapes">
-      <label for"c5" id="l_grapes" class="label">Grapes</label><br>
-    </fieldset>
-  </form>
+<ul id="accesskeys">
+  <li>AccessKeys</li>
+  <li>Homepage: h</li>
+  <li id="a2">About Us: a</li>
+  <li>Our Creations: o</li>
+  <li>Contact Us: c</li>
+</ul>
+
 
 </div>
 
@@ -84,9 +107,9 @@ $(document).ready(function() {
 <div id="cornipickle-explanation" class="nocornipickle">
 
 <h2>The guideline to respect:</h2>
-<p style="max-width: 750px;">Try to align groups of check boxes vertically rather than horizontally, as this makes them easier to scan visually. Use horizontal or rectangular alignments only if they greatly improve the layout of the window.</p>
-<a href="https://developer.gnome.org/hig/stable/check-boxes.html.en#guidelines">Link to the guideline (10th bullet point)</a>
-<p><button id="align-toggle">Toggle alignment</button></p>
+<p style="max-width: 750px;">Provide an access key for every menu item. You may use the same access key on different menus in your application, but avoid duplicating access keys on the same menu. Note that unlike other controls, once a menu is displayed, its access keys may be used by just typing the letter; it is not necessary to press the Alt key at the same time.</p>
+<a href="https://developer.gnome.org/hig/stable/menus.html.en#general-guidelines">Link to the guideline (1st bullet point)</a>
+<p><button id="toggle">Toggle accessKey</button></p>
 
 <div id="cornipickle-section" class="nocornipickle">
 
@@ -97,28 +120,15 @@ $(document).ready(function() {
   <p class="button"><button id="to-cornipickle">Add to Cornipickle</button></p>
 
   <div class="cornipickle-code">
-  # We define a predicate using the construct
-  # "We say that &lt;arguments&gt; is/are &lt;predicate name&gt; when".
-
-  
-  We say that $x and $y are vertically aligned when (
-    (Not ($x's top equals $y's top) )
-    And
-    ($x's left equals $y's left)
-  ).
-
+ 
   """
-    @name Align checkbox groups
-    @description Align groups of checkboxes vertically instead of horizontally
+    @name Header capitalized menu
+    @description Items from a menu should be Header Capitalized
     @severity Warning
   """
 
-   For each $f1 in $(#f2) (
-    For each $f2 in $(#f-1) (
-      ($f1's id equals $f2's id)
-      Or
-      ($f1 and $f2 are vertically aligned)
-    )
+ For each $item in $(nav li) (            
+    $item's accesskey is defined
   ).
 
   </div>
@@ -132,7 +142,7 @@ $(document).ready(function() {
 <h2>Procedural Equivalent</h2>
 
 <div class="procedural-equivalent jquery no-event">
- TODO
+TODO
 </div>
 
 </div>

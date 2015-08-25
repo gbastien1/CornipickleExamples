@@ -103,12 +103,10 @@ $(document).ready(function() {
   """
   
  For each $slider in $(.playground input) (
-  Always (
-    If ($slider was moved)
-    Then (
-      There exists $image in $(.playground img) such that (
-        An $image has changed
-      )
+  If ($slider was moved)
+  Then (
+    There exists $image in $(.playground img) such that (
+      An $image has changed
     )
   )
  ).
