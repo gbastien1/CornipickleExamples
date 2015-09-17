@@ -95,7 +95,8 @@ $(document).ready(function() {
 		add_to_cornipickle(cornipickle_code);
 	}, 1000);
 	$("#htmldiv li").on("click", function() {
-		$(this).replaceWith("<li>" + $(this).html().replace(/\d{5}/, $(".CPinput").val()) + "<li>");
+		var item = $(this).html().replace(/\d{5}/, $(".CPinput").val());
+		$(this).html('').append(item);
 	});
 	//change content when page changes (script was removed by snapshot capture)
 	$("#p1").click(function() {
@@ -123,7 +124,7 @@ $(document).ready(function() {
 <!--Cornipickle code invisible div -->
 <div id="cornipicklecode" style="display: none">
 We say that I click on $x when (
-	$x's event is "mouseup"
+	$x's event is "click"
 ).
 
 """
