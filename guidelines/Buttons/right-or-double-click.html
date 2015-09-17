@@ -6,11 +6,12 @@
 <link rel="stylesheet" type="text/css" href="../screen.css" />
 <link rel="stylesheet" type="text/css" href="/colouring.css" />
 <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
 <script type="text/javascript" src="/cornipickle.js"></script>
 <script type="text/javascript" src="/probe"></script>
-<title>Checkbox accessKey - Cornipickle</title>
+<title>Misaligned menu elements - Cornipickle</title>
 <script type="text/javascript">
 // <![CDATA[
 $(document).ready(function() {
@@ -20,6 +21,7 @@ $(document).ready(function() {
     // Colourize each code snippet
     cornipickle_colourize_all();
     javascript_colourize_all();
+
     // Remove onmouseup event on some elements
     $(".no-event").mouseup(function(event) {
       event.stopPropagation();
@@ -31,25 +33,27 @@ $(document).ready(function() {
       }).mouseup(function(event) {
         event.stopPropagation(); // To avoid a call to Cornipickle
       });
-
-    // Button code
-    $("#toggle").click(function() {
-        if (toggled)
-        {
-          $("#c1").prop("accessKey", "1");
-        }
-        else
-        {
-          $("#c1").prop("accessKey", ""); //both work
-          //$("#c1").removeProp("accessKey");
-        }
-        $("#accesskey").text("\naccessKey for Label1: " + $("#c1").prop("accessKey"));
-        toggled = !toggled;
+    //Right-click button code
+    $("#b1").bind('contextmenu', function() {
+      if (toggled)
+      {
+        $("#b1").css({"width": "100px"});
+      }
+      else
+      {
+        $("#b1").css({"width": "150px"});
+      }
+      toggled = !toggled;
     });
 });
 // ]]>
 </script>
 
+<style type="text/css">
+  #b1, #b2 {
+    width: 100px;
+  }
+</style>
 
 </head>
 
@@ -58,24 +62,22 @@ $(document).ready(function() {
 <div id="contents">
 <h1>Example</h1>
 
-<p class="backmenu"><a href="../index.html" class="no-event">Index</a> » <a href="index.html" class="no-event">Checkboxes</a></p>
+<p class="backmenu"><a href="../index.html" class="no-event">Index</a> » <a href="index.html" class="no-event">Examples</a></p>
 
 <div class="playground">
 
-<input class="checkbox" id="c1" type="checkbox" value="Label1" accesskey="1">
-<label class="checkbox_label" for"c1" id="l1">Label1</label><br>
-<input class="checkbox" id="c2" type="checkbox" value="Label2" accesskey="2">
-<label class="checkbox_label" for"c2" id="l2">Label2</label><br>
-<div id="accesskey">AccessKey for Label1: 1</div>
+<button id="b1">I'm correct!</button><button id="b2">I'm not!</button>
+
 </div>
 
 <!-- Cornipickle explanation -->
 <div id="cornipickle-explanation" class="nocornipickle">
 
 <h2>The guideline to respect:</h2>
-<p style="max-width: 750px;">Provide an access key in all check box labels that allows the user to set or unset the check box directly from the keyboard.</p>
-<a href="https://developer.gnome.org/hig/stable/check-boxes.html.en#guidelines">Link to the guideline (6th bullet point)</a>
-<p><button id="toggle">Toggle accessKey</button></p>
+<p style="max-width: 750px;">Do not assign actions to double-clicking or right-clicking a button. Users are unlikely to discover these actions, and if they do, it will distort their expectations of other buttons on the desktop.</p>
+<a href="https://developer.gnome.org/hig/stable/buttons.html.en#general-guidelines">Link to the guideline (4th bullet point)</a>
+
+<p><button id="misalign-toggle">Don't click me for nothing!</button></p>
 
 <div id="cornipickle-section" class="nocornipickle">
 
@@ -86,15 +88,28 @@ $(document).ready(function() {
   <p class="button"><button id="to-cornipickle">Add to Cornipickle</button></p>
 
   <div class="cornipickle-code">
+  
+  # Missing double click, which could be possible later using "eventually within x sec"
+
+  We say that I right-click on $b when (
+    $b's event matches "right click"
+  ).
+
   """
-    @name Checkbox's accessKey
-    @description Provide an accessKey on all checkbox
+    @name button's hidden clicks
+    @description No right or double click assigned to any button
     @severity Warning
   """
+  # It would be better to express that the style and DOM structure stays the same
 
-  For each $checkbox in $(.checkbox) (
-    $checkbox's accesskey is defined                          
-  ). 
+  For each $button in $(button) (
+    If
+      (I right-click on $button)
+    Then
+      (When $button is now $button2 (
+        $button's width equals $button2's width
+      ))
+  ).
 
   </div>
 
@@ -107,7 +122,7 @@ $(document).ready(function() {
 <h2>Procedural Equivalent</h2>
 
 <div class="procedural-equivalent jquery no-event">
-  TODO
+TODO
 </div>
 
 </div>

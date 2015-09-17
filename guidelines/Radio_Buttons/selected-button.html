@@ -10,7 +10,7 @@
 <script type="text/javascript" src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
 <script type="text/javascript" src="/cornipickle.js"></script>
 <script type="text/javascript" src="/probe"></script>
-<title>Checkbox accessKey - Cornipickle</title>
+<title>Radio button selection - Cornipickle</title>
 <script type="text/javascript">
 // <![CDATA[
 $(document).ready(function() {
@@ -33,24 +33,20 @@ $(document).ready(function() {
       });
 
     // Button code
-    $("#toggle").click(function() {
+    $("#align-toggle").click(function() {
         if (toggled)
         {
-          $("#c1").prop("accessKey", "1");
+          $("#c3").prop("checked", true);
         }
         else
         {
-          $("#c1").prop("accessKey", ""); //both work
-          //$("#c1").removeProp("accessKey");
+          $("#c3").prop("checked", false);
         }
-        $("#accesskey").text("\naccessKey for Label1: " + $("#c1").prop("accessKey"));
         toggled = !toggled;
     });
 });
 // ]]>
 </script>
-
-
 </head>
 
 <body>
@@ -58,24 +54,31 @@ $(document).ready(function() {
 <div id="contents">
 <h1>Example</h1>
 
-<p class="backmenu"><a href="../index.html" class="no-event">Index</a> » <a href="index.html" class="no-event">Checkboxes</a></p>
+<p class="backmenu"><a href="../index.html" class="no-event">Index</a> » <a href="index.html" class="no-event">Radio buttons</a></p>
 
 <div class="playground">
 
-<input class="checkbox" id="c1" type="checkbox" value="Label1" accesskey="1">
-<label class="checkbox_label" for"c1" id="l1">Label1</label><br>
-<input class="checkbox" id="c2" type="checkbox" value="Label2" accesskey="2">
-<label class="checkbox_label" for"c2" id="l2">Label2</label><br>
-<div id="accesskey">AccessKey for Label1: 1</div>
+  <form>
+    <fieldset id="f1" style="width: 300px">
+      <legend>Flavour</legend>
+      <input id="c1" type="radio" value="Vanilla" name="flavour">
+      <label for"c1" id="l_vanilla" class="label">Vanilla</label><br>
+      <input id="c2" type="radio" value="Chocolate" name="flavour">
+      <label for"c2" id="l_chocolate" class="label">Chocolate</label><br>
+      <input id="c3" type="radio" value="Maple" name="flavourr">
+      <label for"c3" id="l_maple" class="label">Maple</label><br>
+    </fieldset>
+  </form>
+
 </div>
 
 <!-- Cornipickle explanation -->
 <div id="cornipickle-explanation" class="nocornipickle">
 
 <h2>The guideline to respect:</h2>
-<p style="max-width: 750px;">Provide an access key in all check box labels that allows the user to set or unset the check box directly from the keyboard.</p>
-<a href="https://developer.gnome.org/hig/stable/check-boxes.html.en#guidelines">Link to the guideline (6th bullet point)</a>
-<p><button id="toggle">Toggle accessKey</button></p>
+<p style="max-width: 750px;">Exactly one radio button should be set in the group at all times. The only exception is when the group is showing the properties of a multiple selection, when one or more of the buttons may be in their mixed state.</p>
+<a href="https://developer.gnome.org/hig/stable/radio-buttons.html.en#guidelines">Link to the guideline (2nd bullet point)</a>
+<p><button id="align-toggle">Toggle checked</button></p>
 
 <div id="cornipickle-section" class="nocornipickle">
 
@@ -86,15 +89,35 @@ $(document).ready(function() {
   <p class="button"><button id="to-cornipickle">Add to Cornipickle</button></p>
 
   <div class="cornipickle-code">
+
   """
-    @name Checkbox's accessKey
-    @description Provide an accessKey on all checkbox
+    @name Select one radio button
+    @description Only one radio button should be selected at all times
     @severity Warning
   """
 
-  For each $checkbox in $(.checkbox) (
-    $checkbox's accesskey is defined                          
-  ). 
+  (
+    There exists $i in $(form input) such that (
+      $i's checked matches "true"
+    )
+  )
+  And
+  (
+    For each $i1 in $(form input) (
+      For each $i2 in $(form input) (
+        ($i1's cornipickleid equals $i2's cornipickleid)
+        Or
+        (
+          Not
+          (
+            ($i1's checked matches "true")
+            And
+            ($i2's checked matches "true")
+          )
+        )
+      )
+    )
+  ).
 
   </div>
 
@@ -107,7 +130,7 @@ $(document).ready(function() {
 <h2>Procedural Equivalent</h2>
 
 <div class="procedural-equivalent jquery no-event">
-  TODO
+ TODO
 </div>
 
 </div>

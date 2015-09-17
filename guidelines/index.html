@@ -1,46 +1,107 @@
-<!DOCTYPE html>
+<DOCTYPE !html>
 <html>
+	<head>
+		<title>Cornipickle Guidelines - LIF 2015</title>
 
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" type="text/css" href="screen.css" />
-	<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
-	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-	<script type="text/javascript" src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="cornipickle.js"></script>
-	
-	<title>Guidelines - Cornipickle</title>
-</head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<body>
+		<link rel="stylesheet" type="text/css" href="indexScreen.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
-<div id="contents">
+		<script type="text/javascript">
+		//Jquery script to display menus on click
+		$(document).ready(function() {
+			$("nav > ul > li > a").click(function() {
+				if ($(this).next().is(":visible")) 
+				{
+					$("nav > ul > li ul").hide('fast');
+				}
+				else {
+					$("nav > ul > li ul").hide('fast');
+					$(this).next().toggle('fast');
+				}
+			});
+		});
+		</script>
 
-	<h1 style="background-color: #e1e1e1; padding: 40px;">Cornipickle guidelines based on Gnome</h1>
-
-	<a href="Examples/index.html">Basic examples and tests</a>
-	<br />
-
-	<a href="https://developer.gnome.org/hig/stable/ui-elements.html.en"><h2>Gnome's HIG</h2></a>
-
-	<ul>
-		<li><a href="Buttons/index.html">Buttons</a></li>
-		<li><a href="Checkboxes/index.html">Checkboxes</a></li>
-		<li><a href="Radio_Buttons/index.html">Radio buttons</a></li>
-		<li><a href="Popovers/index.html">Popovers</a></li>
-		<li><a href="Text_Fields/index.html">Text fields</a></li>
-		<li><a href="Menus/index.html">Menus</a></li>
-		<li><a href="Spin_Boxes/index.html">Spin boxes (todo)</a></li>
-		<li><a href="Sliders/index.html">Sliders</a></li>
-		<li><a href="Tabs/index.html">Tabs</a></li>
-	</ul>
-
-	<div id="footer">
-		<hr />
-		&copy; 2015 LIF
-	</div>
-
-</div> <!-- /contents -->
-
-</body>
+	</head>
+	<body>
+		<div class="header_container">
+			<h1>CORNIPICKLE GUIDELINES</h1>
+			<a class="subtle" href="Examples/index.html">CORNIPICKLE TESTS</a>
+		</div>
+		<nav class="nav_container clearfix">
+			<a href="https://developer.gnome.org/hig/stable/ui-elements.html.en"><h3>GNOME'S HIG</h3></a>
+			<ul>
+				<li>
+					<a href="javascript:void(0)">BUTTONS</a>
+					<ul>
+						<li><a href="Buttons/TwoButtonsWidth.html">Two close buttons have the same width</a></li>
+						<li><a href="Buttons/affirmative-destructive-buttons.html">Affirmative and destructive buttons</a></li>
+						<li><a href="Buttons/Button_labels.html">Button labels should use header capitalization</a></li>
+						<li><a href="Buttons/right-or-double-click.html">No right click or double click should be assigned to a button</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0)">CHECKBOXES</a>
+					<ul>
+						<li><a href="Checkboxes/Checkbox-labels.html">Sentence capitalized checkbox labels</a></li>
+						<li><a href="Checkboxes/Align-checkbox-groups.html">Checkbox groups should be vertically aligned</a></li>
+						<li><a href="Checkboxes/RelatedCheckboxes.html">Related checkboxes should be aside or one above the other(not working)</a></li>
+						<li><a href="Checkboxes/accesskey.html">Provide an accesskey on all checkbox labels</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0)">MENUS</a>
+					<ul>
+						<li><a href="Menus/Menu-capitalization.html">Menu items should use Heading Capitalization</a></li>
+						<li><a href="Menus/menu-accesskey.html">Provide an accesskey for each menu item</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0)">POPOVERS</a>
+					<ul>
+						<li><a href="Popovers/popover-size.html">Popover's size lesser than 1/3 of container</a></li>
+						<li><a href="Popovers/no-surprising-popover.html">No popover should appear without user action</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0)">SPIN BOXES</a>
+					<ul>
+						<li><a href="Spin_Boxes/spin-box-1.html">Spin box guideline 1</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0)">RADIO BUTTONS</a>
+					<ul>
+						<li><a href="Radio_Buttons/radio-buttons-count.html">At least two radio buttons</a></li>
+						<li><a href="Radio_Buttons/label-capitalization.html">Use sentence capitalization for labels</a></li>
+						<li><a href="Radio_Buttons/group-alignment.html">Align radio button groups vertically</a></li>
+						<li><a href="Radio_Buttons/selected-button.html">Select only one radio button at a time</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0)">TEXT FIELDS</a>
+					<ul>
+						<li><a href="Text_Fields/textfield-size.html">Text field's width fits the content</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0)">SLIDERS</a>
+					<ul>
+						<li><a href="Sliders/real-time-feedback.html">Give real time feedback of moving slider</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0)">TABS</a>
+					<ul>
+						<li><a href="Tabs/tab_count.html">Use at most one row of tabs</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		<footer class="footer_container">
+			&copy; 2015 LIF
+		</footer>
+	</body>
 </html>
